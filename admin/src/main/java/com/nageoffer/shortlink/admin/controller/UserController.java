@@ -16,11 +16,10 @@ public class UserController {
     @GatMapping("/api/shortlink/v1/user/{username}")
     public String getUserByUsername(@PathVariable("username") String username) {
         UserRespDTO result = userService.getUserByUsername(username);
-        if(result==null){
-            return new Result<UserRespDTO>().setCode("-1").setMessage("search result is null")
+        if (result==null){
+            return new Result<UserRespDTO>().setCode(UserErrorCodeEnum.USER_NULL.code()).setMessage(UserErrorCodeEnum.USER_NULL.message());
         } else {
-            return new Result<UserRespDTO>().setCode("0").setData(result)
+            return new Result<UserRespDTO>().setCode("0").setData(result);
         }
-        
     }
 }
