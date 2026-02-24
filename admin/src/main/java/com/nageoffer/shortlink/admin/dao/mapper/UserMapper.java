@@ -1,4 +1,12 @@
 package com.nageoffer.shortlink.admin.dao.mapper;
 
-public interface UserMapper {
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.nageoffer.shortlink.admin.dao.entity.UserDO;
+import com.nageoffer.shortlink.admin.dao.mapper.UserMapper;
+import com.nageoffer.shortlink.admin.service.UserService;
+
+/**
+ * user lasting level
+ */
+public interface UserMapper extends BaseMapper<UserDO> {
 }
