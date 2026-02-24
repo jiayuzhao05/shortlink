@@ -14,7 +14,7 @@ public class UserController {
      * search user info through account name
      */
     @GatMapping("/api/shortlink/v1/user/{username}")
-    public String getUserByUsername(@PathVariable("username") String username) {
+    public Result<UserRespDTO> getUserByUsername(@PathVariable("username") String username) {
         UserRespDTO result = userService.getUserByUsername(username);
         if (result==null){
             return new Result<UserRespDTO>().setCode(UserErrorCodeEnum.USER_NULL.code()).setMessage(UserErrorCodeEnum.USER_NULL.message());
