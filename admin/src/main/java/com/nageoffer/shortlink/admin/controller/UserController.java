@@ -22,4 +22,12 @@ public class UserController {
             return new Result<UserRespDTO>().setCode("0").setData(result);
         }
     }
+
+    /**
+     * search if user exists
+     */
+    @getMapping("/api/shortlink/v1/has-username")
+
+    public Result<Boolean> hasUsername(@RequestParam("username") String username) {
+          return Results.success(userService.hasUsername(username))}
 }
