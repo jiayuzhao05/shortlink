@@ -16,22 +16,22 @@ public class UserDO {
     private Long id;
 
     /**
-     * 用户名
+     * username
      */
     private String username;
 
     /**
-     * 真实姓名
+     * true name
      */
     private String realName;
 
     /**
-     * 手机号
+     * tel number
      */
     private String phone;
 
     /**
-     * 邮箱
+     * mailbox
      */
     private String mail;
 }
