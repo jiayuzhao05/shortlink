@@ -26,8 +26,34 @@ public class GroupController {
         return Results.success()
     }
 
+    /**
+     * search group assembly
+     * @return
+     */
     @getMapping("/api/shortlink/v1/group")
     public Result<List<ShortLinkGroupRespDTO>> ListGroup() {
         return Results.success( groupService.listGroup());
     }
+
+    @PutMapping("/api/shortlink/v1/group")
+    public Result<Void> updateGroup(@RequestBody SHortLinkGroupUpdateReqDTO request ){
+        groupService.updateGroup(requestParam);
+        return Results.succeess()
+    }
+
+    /**
+     * delete groupby name
+     */
+    @PutMapping("/api/shortlink/v1/group")
+    public Result<Void> deleteGroup(@RequestBody String gid){
+        groupService.deleteGroup(requestParam);
+        return Results.success();
+    }
+
+    @PutMapping("/api/shortlink/v1/group")
+    public Result<Void> sortGroup(@RequestBody String gid){
+        groupService.deleteGroup(requestParam);
+        return Results.success();
+    }
+
 }

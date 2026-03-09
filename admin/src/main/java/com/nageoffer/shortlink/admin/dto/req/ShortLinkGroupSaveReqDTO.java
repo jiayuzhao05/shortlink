@@ -7,7 +7,13 @@ import lombok.Data;
  */
 public class ShortLinkGroupSaveReqDTO {
     /**
+     * groupby ID
+     */
+    private String id;
+    /**
      * groupby name
      */
+    private String name;
+
 
 }

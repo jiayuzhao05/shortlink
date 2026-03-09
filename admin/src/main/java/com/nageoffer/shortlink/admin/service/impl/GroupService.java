@@ -19,4 +19,22 @@ public interface GroupService extends IService<GroupDO> {
      * @return
      */
     List<ShortLinkGroupRepDTO> listGroup();
+
+    /**
+     * modify groupby
+     * @param requestParam
+     */
+    void updateGroup(ShortLinkGroupUpdateReqDTO requestParam)
+
+    /**
+     * delete groupby
+     * @param gid shortlink groupby
+     */
+    void deleteGroup(String gid);
+
+    /**
+     * sort groupby
+     * @param requestParam
+     */
+    void sortGroup(List<ShortLinkGroupSOrtReqDTO> requestParam)
 }
