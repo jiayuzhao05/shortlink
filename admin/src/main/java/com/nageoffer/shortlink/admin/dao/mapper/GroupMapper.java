@@ -1,8 +1,12 @@
 package com.nageoffer.shortlink.admin.dao.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+import com.nageoffer.shortlink.admin.dao.entity.GroupDO;
 /*
- * lasting layer for short link
+ * lasting classfied layer for shortlink
  */
-public class GroupMapper extends BaseMapper<GroupDO> {
+@Mapper
+public interface GroupMapper extends BaseMapper<GroupDO> {
 
 }
