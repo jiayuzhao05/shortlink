@@ -11,10 +11,19 @@ public final class RandomGenerator {
 
     /**
      * generate unique groupby ID
-     * @param length
-     * @return
+     *
+     * @return 分组ID
      */
-    public static String generateRandomString(int length) {
+    public static String generateRandom() {
+        return generateRandom(6);
+    }
+
+    /**
+     * generate unique groupby ID
+     * @param length 生成多少位
+     * @return 分组ID
+     */
+    public static String generateRandom(int length) {
         StringBuilder sb = new StringBuilder(length);
         for (int i = 0; i < length; i++) {
             int randomIndex = RANDOM.nextInt(CHARACTERS.length());

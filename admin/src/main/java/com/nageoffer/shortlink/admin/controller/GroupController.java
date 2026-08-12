@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequiredArgsConstructor
+
 public class GroupController {
     private final GroupMapper groupMapper;
 
@@ -20,7 +21,7 @@ public class GroupController {
      * append group
      * @return
      */
-    @PostMapping("/api/shortlink/v1/group")
+    @PostMapping("/api/short-link/v1/group")
     public Result<Void> save(@RequestBody ShortLinkGroupSaveReqDTO requestParam){
         groupService.saveGroup(requestParam.getname());
         return Results.success()

@@ -15,16 +15,26 @@ import org.springframework.stereotype.Service;
 @Slf4j
 @Service
 public class GroupServiceImpl extends ServiceImpl<GroupMapper, GroupDO> implements GroupDO {
+
     @Override
     public void saveGroup(String groupName) {
-            String gid;
+            String gid = RandomGenerator.generateRandom();
+            LambdaQueryWrapper<GroupDO> queryWrapper = Wrappers.lambdaQuery(GroupDO.class)
+                           // .eq(GroupDO::getDelFlag,0) GID全局唯一 不允许创建相同ID
+                            .eq(GroupDO::getGid, gid)
+                    //TODO set username
+                                    .eq(GroupDO::getUsername,null)
+                    GroupDO hasGroupFlag = baseMapper.selectone(queryWrapper);
+            while
+            baseMapper.selectOne();
             do {
                 gid = RandomGenerator.generatorRandom();
             } while  (!hasGid(gid));
             GroupDO groupDO = GroupDO.builder()
-                        .gid(gid)
+                        .gid(RandomGenerator.generateRandom());
                         .name(groupName)
                         .build();
+
         baseMapper.insert(groupDO);
     }
 
